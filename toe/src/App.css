@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #d9f3ff, #fff4f4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Navbar */
+nav {
+  background-color: #4b9cd3;
+  padding: 1rem 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 2.5vmin;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 12px 12px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Game container */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vmin;
+}
+
+.gameContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5vmin;
+  margin-top: 4vmin;
+  flex-wrap: wrap;
+}
+
+/* Board wrapper */
+.board-wrapper {
+  position: relative;
+}
+
+/* Grid board */
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 20vmin);
+  grid-template-rows: repeat(3, 20vmin);
+  gap: 1.5vmin;
+  position: relative;
+}
+
+.box {
+  background: white;
+  border: 0.5vmin solid #4b9cd3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6vmin;
+  font-weight: 600;
+  color: #333;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.box:hover {
+  background: #e6f4ff;
+  transform: scale(1.05);
+}
+
+/* Info box */
+.gameInfo {
+  text-align: center;
+  width: 40vmin;
+  background: #ffffffb0;
+  padding: 2vmin;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Winner message + button */
+.info {
+  display: block;
+  font-size: 3vmin;
+  font-weight: 500;
+  margin-bottom: 1vmin;
+}
+
+button#reset {
+  padding: 1vmin 3vmin;
+  background-color: #4b9cd3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 2.5vmin;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button#reset:hover {
+  background-color: #357ba7;
+}
+
+/* Gift box */
+.giftbox {
+  margin-top: 2vmin;
+  background: #ffffff;
+  padding: 2vmin;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+.gift-image {
+  width: 25vmin;
+  height: 25vmin;
+  margin-bottom: 1vmin;
+  animation: bounce 1.5s infinite;
+}
+.giftbox p {
+  font-size: 3vmin;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Highlight winning boxes */
+.highlight {
+  background-color: #d4edda !important;
+  border-color: #28a745 !important;
+  color: #155724 !important;
+  animation: flash 1s infinite alternate;
+}
+
+@keyframes flash {
+  from { background-color: #d4edda; }
+  to { background-color: #b1f2b0; }
+}
+
